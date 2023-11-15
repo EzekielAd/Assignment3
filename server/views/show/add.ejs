@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+
+    <!--CSS-->
+    <link rel='stylesheet' href='/Content/style.css' />
+    <link rel='stylesheet' href="/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel='stylesheet' href="/@fortawesome/fontawesome-free/css/all.min.css" />
+  </head>
+  <body>
+  
+  <header class="mb-auto">
+    <!--NavBar!-->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+
+      <a class="navbar-brand" href="/"><i class="fa-solid fa-user fa-lg"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+          <li class="nav-item">
+          <% if (title == "Home Page") { %>
+            <a class="nav-link active" aria-current="" href="/home">
+          <% } else { %>
+            <a class="nav-link" href="/home">
+          <% } %>
+            <i class="fa-solid fa-lg fa-house-user"></i>
+            Home</a>
+          </li>
+
+            <li class="nav-item">
+          <% if (title == "About Us") { %>
+            <a class="nav-link active" href="/about">
+          <% } else { %>
+           <a class="nav-link" href="/about">
+          <% } %>
+            <i class="fa-solid fa-lg fa-circle-question"></i>
+            About us</a>
+          </li>
+            <li class="nav-item">
+          <% if (title == "Contact Us") {%>
+            <a class="nav-link active" href="/contact">
+          <% } else {%>
+            <a class="nav-link" href="/contact">
+          <% } %>
+            <i class="fa-solid fa-envelope fa-lg"></i>Contact Us</a>
+          </li>
+
+          <li class="nav-item">
+          <% if (title == "Projects Page") {%>
+          <a class="nav-link active" href="/project">
+          <% } else {%>
+          <a class="nav-link"   href="/project">
+          <% } %>
+            <i class="fa-solid fa-gears fa-lg"></i>Projects</a>
+          </li>
+
+           <li class="nav-item">
+          <% if (title == "Show List") {%>
+            <a class="nav-link active" href="/showslist">
+          <% } else {%>
+            <a class="nav-link" href="/showslist">
+          <% } %>
+            <i class="fa-solid fa-film fa-lg"></i> Show List</a>
+          </li>
+        </ul>
+      </div>
+    </div> 
+  </nav>
+</header>
+
+<!-- Content for the Add page -->
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1><%= title %></h1>
+
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <label for="titleTextField">Show Title</label>
+                    <input type="text" class="form-control"
+                    id="titleTextField"
+                    placeholder="Enter the Show Title"
+                    name="title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="genreTextField">genre</label>
+                    <input type="text" class="form-control"
+                    id="genreTextField"
+                    placeholder="Enter the Show's genre"
+                    gtitle="genre" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="ratingTextField">rating</label>
+                    <input type="text" class="form-control"
+                    id="ratingTextField"
+                    placeholder="Enter the Show's Rating"
+                    name="rating" required>
+                </div>
+
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit</button>
+                
+                    <a href="/showslist" class="btn btn-warning">
+                        <i class="fas fa-undo"></i> Cancel</a>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+
+<!--Bottom Nav Bar-->
+<nav class="navbar fixed-bottom navbar-dark bg-dark">
+  <h6 class="navbar-text text-center mx-auto">&copy; Copyright 2023. All rights Reserved</h6>
+  <a class="navbar-brand" href="https://github.com/EzekielAd/Assignment3"><i class="fa-brands fa-github"></i></a>
+  <a class="navbar-brand" href="https://www.linkedin.com/in/ezekiel-adekunle-09a6a8258/"><i class="fa-brands fa-linkedin fa-lg"></i></a>
+  
+</nav>
+
+<!--Script Files-->
+<script src="/Scripts/app.js>"></script>
+<script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/jquery/dist/jquery.min.js"></script>
+
+</div>
+  </body>
+</html>
